@@ -1,0 +1,16 @@
+﻿@using Authorization.Models
+
+@model IEnumerable<AppUser>
+@if (Model.Count() == 0)
+{
+    <h1>noooo</h1>
+}
+else
+{
+    foreach (AppUser item in Model)
+    {
+        <h1>@item.Id</h1>
+        <h1>@item.UserName</h1>
+        <h1>@item.Email</h1>
+    }
+}

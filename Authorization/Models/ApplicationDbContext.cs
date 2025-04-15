@@ -7,10 +7,9 @@ namespace Authorization.Models
 
 
 
-
     public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
-        public ApplicationDbContext(DbContextOptions options) : base("server=.;initial catalog=TestChange;integrated security=true");
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
     }

@@ -9,7 +9,6 @@ namespace Authorization.Models
 
     public class AppUser:IdentityUser
     {
-
-
+       
     }
 }
