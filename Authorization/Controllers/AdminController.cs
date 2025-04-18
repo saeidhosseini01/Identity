@@ -30,7 +30,6 @@ namespace Authorization.Controllers
                 AppUser user = new AppUser{
                 Email = User.Email,
                 UserName=User.userName 
-               
                 };
                 IdentityResult result = UserManager.CreateAsync(user,User.Password).Result;
                 if(result.Succeeded)

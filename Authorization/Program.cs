@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddTransient<IPasswordValidator<AppUser>, CustomPasswordvalidator2>();
+builder.Services.AddTransient<IUserValidator<AppUser>, CustomUserValidator>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer("Server=.;Initial Catalog=IdentityDB;Integrated Security=True;TrustServerCertificate=True;"));
 builder.Services.AddIdentity<AppUser, IdentityRole>(c =>
