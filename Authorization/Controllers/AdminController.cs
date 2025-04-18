@@ -64,7 +64,7 @@ namespace Authorization.Controllers
             }
             else
             {
-
+                ModelState.AddModelError("", "کاربر مورد نظر پیدا نشد.");
             }
             return View("index");
         }
