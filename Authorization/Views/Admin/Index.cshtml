@@ -1,16 +1,28 @@
 ﻿@using Authorization.Models
 
 @model IEnumerable<AppUser>
-@if (Model.Count() == 0)
-{
-    <h1>noooo</h1>
-}
-else
-{
-    foreach (AppUser item in Model)
+
+<table class="table table-sm table-bordered">
+    <tr>
+    
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+    @foreach (var item in Model)
     {
-        <h1>@item.Id</h1>
-        <h1>@item.UserName</h1>
-        <h1>@item.Email</h1>
+        <tr>
+            
+            <td>@item.UserName</td>
+            <td>@item.Email</td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@item.Id" method="post">
+                    <a  class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@item.Id">Edite
+
+                    </a>
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
     }
-}
+
+</table>
