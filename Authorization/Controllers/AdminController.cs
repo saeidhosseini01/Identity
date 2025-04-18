@@ -59,7 +59,7 @@ namespace Authorization.Controllers
                 else
                 {
 
-                AddErrorsFromResult(result)
+                    AddErrorsFromResult(result);
                 }
             }
             else
@@ -68,5 +68,13 @@ namespace Authorization.Controllers
             }
             return View("index");
         }
+    
+    private void AddErrorsFromResult(IdentityResult result)
+    {
+        foreach (var error in result.Errors)
+        {
+            ModelState.AddModelError("", error.Description);
+        }
+    }
     }
 }
