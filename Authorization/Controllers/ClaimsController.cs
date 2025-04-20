@@ -6,9 +6,10 @@ namespace Authorization.Controllers
     public class ClaimsController : Controller
     {
 
-        [Authorize]
+  
         public IActionResult Index()
         {
+            var s = User?.Claims;
             return View(User?.Claims);
         }
     }

@@ -1,1 +1,30 @@
-﻿
+﻿@model IEnumerable<System.Security.Claims.Claim>;
+
+
+
+
+
+
+
+
+<table class="table table-sm table-bordered">
+    <tr>
+
+        <th>Subject</th>
+        <th>Issure</th>
+        <th>Type</th>
+        <th>Vlaue</th>
+    </tr>
+    @foreach (var item in Model.OrderBy(x=>x.Type))
+    {
+        <tr>
+
+            <td>@item.Subject.Name</td>
+            <td>@item.Issuer</td>
+            <td identity-claim-type="@item.Type"></td>
+            <td>@item.Value</td>
+            
+        </tr>
+    }
+
+</table>
